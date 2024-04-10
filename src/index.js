@@ -1,10 +1,9 @@
-//create cars api using express
 const express = require('express');
+const cors = require('cors'); // Import CORS middleware
 const app = express();
 
-
-
 app.use(express.json());
+app.use(cors()); // Enable CORS for all routes
 
 const cars = require('./cars.json');
 
@@ -51,4 +50,3 @@ const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
     console.log(`Server started at ${PORT}`);
 });
-
